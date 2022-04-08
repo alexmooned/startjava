@@ -1,4 +1,4 @@
-public class MyFirstProgram {
+public class VariablesTheme {
     public static void main(String[] args) {
         //Создание переменных и вывод их значений на консоль (это название задачи)
         System.out.println("Создание переменных и вывод их значений на консоль");        
@@ -44,14 +44,14 @@ public class MyFirstProgram {
         System.out.println(shortMax);
         System.out.println(intMax);
         System.out.println(longMax);
-        System.out.println(byteMax++);
-        System.out.println(shortMax++);
-        System.out.println(intMax++);
-        System.out.println(longMax++);
-        System.out.println(byteMax--);
-        System.out.println(shortMax--);
-        System.out.println(intMax--);
-        System.out.println(longMax--);       
+        System.out.println(++byteMax);
+        System.out.println(++shortMax);
+        System.out.println(++intMax);
+        System.out.println(++longMax);
+        System.out.println(--byteMax);
+        System.out.println(--shortMax);
+        System.out.println(--intMax);
+        System.out.println(--longMax);       
 
         //Перестановка значений переменных
         System.out.println("\nПерестановка значений переменных");
@@ -92,17 +92,17 @@ public class MyFirstProgram {
 
         //Вывод на консоль ASCII-арт Дюка
         System.out.println("\nВывод на консоль ASCII-арт Дюка");
-        char symForwardSlash = '/';
-        char symBackSlash = '\\';
-        char symSpace = ' ';
-        char symUnderscore = '_';
-        char symOpenParenthesis = '(';
-        char symCloseParenthesis = ')';
-		System.out.println("" + symSpace + symSpace + symSpace + symSpace + symForwardSlash + symBackSlash + symSpace + symSpace + symSpace + symSpace);    
-        System.out.println("" + symSpace + symSpace + symSpace + symForwardSlash + symSpace + symSpace + symBackSlash + symSpace + symSpace + symSpace);
-        System.out.println("" + symSpace + symSpace + symForwardSlash + symUnderscore + symOpenParenthesis + symSpace + symCloseParenthesis + symBackSlash + symSpace + symSpace);
-        System.out.println("" + symSpace + symForwardSlash + symSpace + symSpace + symSpace + symSpace + symSpace + symSpace + symBackSlash + symSpace);
-        System.out.println("" + symForwardSlash + symUnderscore + symUnderscore + symUnderscore + symUnderscore + symForwardSlash + symBackSlash + symUnderscore + symUnderscore + symBackSlash);       
+        char slash = '/';
+        char backSlash = '\\';
+        char space = ' ';
+        char underscore = '_';
+        char lBracket = '(';
+        char rBracket = ')';
+		System.out.println("" + space + space + space + space + slash + backSlash + space + space + space + space);    
+        System.out.println("" + space + space + space + slash + space + space + backSlash + space + space + space);
+        System.out.println("" + space + space + slash + underscore + lBracket + space + rBracket + backSlash + space + space);
+        System.out.println("" + space + slash + space + space + space + space + space + space + backSlash + space);
+        System.out.println("" + slash + underscore + underscore + underscore + underscore + slash + backSlash + underscore + underscore + backSlash);       
 
         //Отображение количества сотен, десятков и единиц числа
         System.out.println("\nОтображение количества сотен, десятков и единиц числа");
