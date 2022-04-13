@@ -34,7 +34,7 @@ public class IfElseStatementTheme {
         int firstNum = 78;
         int secondNum = 12;
         if (firstNum > secondNum) {
-            System.out.println("Макисмальное число " + firstNum);
+            System.out.println("Максимальное число " + firstNum);
             System.out.println("Минимальное число " + secondNum);
         } else if (firstNum < secondNum) {
             System.out.println("Максимальное число " + secondNum);
@@ -45,18 +45,18 @@ public class IfElseStatementTheme {
 
         //3. Работа с числом
         System.out.println("\n3. Работа с числом");
-        int randomNum = 456;
-        if (randomNum % 2 == 0) {
-            System.out.println("Число " + randomNum + " четное");
+        int srcNum = 456;
+        if (srcNum % 2 == 0) {
+            System.out.println("Число " + srcNum + " четное");
         } else {
-            System.out.println("Число " + randomNum + " нечетное");
+            System.out.println("Число " + srcNum + " нечетное");
         }
-        if (randomNum > 0) {
-            System.out.println("Число " + randomNum + " положительное");
-        } else if (randomNum < 0) {
-            System.out.println("Число " + randomNum + " отрицательное");
+        if (srcNum > 0) {
+            System.out.println("Число " + srcNum + " положительное");
+        } else if (srcNum < 0) {
+            System.out.println("Число " + srcNum + " отрицательное");
         } else {
-            System.out.println("Число " + randomNum + " является нулем");
+            System.out.println("Число " + srcNum + " является нулем");
         }
 
         //4. Поиск общей цифры в числах
@@ -64,13 +64,16 @@ public class IfElseStatementTheme {
         firstNum = 789;
         secondNum = 129;
         if ((firstNum / 100) == (secondNum / 100)) {
+            System.out.print("В третьем разряде совпала цифра: ");
             System.out.println(firstNum / 100);
         } 
         if ((firstNum / 10 % 10) == (secondNum / 10 % 10)) {
+            System.out.print("Во втором разряде совпала цифра: ");
             System.out.println(firstNum / 10 % 10);
         }
         if ((firstNum % 10) == (secondNum % 10)) {
-            System.out.println(firstNum % 10);
+            System.out.print("В первом разряде совпала цифра: ");
+            System.out.println(firstNum / 100);
         }
 
         //5. Определение буквы, числа или символа по их коду
@@ -106,12 +109,8 @@ public class IfElseStatementTheme {
 
         //7. Определение оценки по предметам
         System.out.println("\n7. Определение оценки по предметам");
-        int percentHistory = 59;
-        int percentProgramming = 91;
-        int scoreHistory;
-        int scoreProgramming;
-        int avgScore;
-        int avgPercent;
+        int percentHistory = 59;        
+        int scoreHistory;                
         if (percentHistory <= 60) {
             scoreHistory = 2;
         } else if (percentHistory > 60 && percentHistory <= 73) {
@@ -121,6 +120,8 @@ public class IfElseStatementTheme {
         } else {
             scoreHistory = 4;
         }
+        int percentProgramming = 91;
+        int scoreProgramming;
         if (percentProgramming <= 60) {
             scoreProgramming = 2;
         } else if (percentProgramming > 60 && percentProgramming <= 73) {
@@ -130,6 +131,8 @@ public class IfElseStatementTheme {
         } else {
             scoreProgramming = 4;
         }
+        int avgScore;
+        int avgPercent;
         avgScore = (scoreHistory + scoreProgramming) / 2;
         avgPercent = (percentHistory + percentProgramming) / 2;
         System.out.println("История - " + scoreHistory);
@@ -153,39 +156,41 @@ public class IfElseStatementTheme {
         System.out.println("\n9. Определение существования треугольника");
         int a = 3;
         int b = 4;
-        int c = 5;
-        int firstLeg = 0;
-        int secondLeg = 0;
-        int hypotenuse = 0;
-        double areaTriangle = 0;
+        int c = 5;                
         if (a + b > c && a + c > b && b + c > a) {
             System.out.println("Треугольник может существовать");
         } else {
             System.out.println("Треугольник не может существовать");
         }
+        int leg1 = 0;
+        int leg2 = 0;
+        int hypotenuse = 0;
         if (a > b && a > c) {
-            firstLeg = b;
-            secondLeg = c;
+            leg1 = b;
+            leg2 = c;
             hypotenuse = a;
         } else if (b > a && b > c) {
-            firstLeg = a;
-            secondLeg = c;
+            leg1 = a;
+            leg2 = c;
             hypotenuse = b;        
         } else if (c > b && c > a) {
-            firstLeg = a;
-            secondLeg = b;
+            leg1 = a;
+            leg2 = b;
             hypotenuse = c;
         } 
-        System.out.println("Первый катет треугольника: " + firstLeg);
-        System.out.println("Второй катет треугольника: " + secondLeg);
-        System.out.println("Гепотенуза треугольника: " + hypotenuse);
-        areaTriangle = 0.5 * firstLeg * secondLeg;
+        System.out.println("Первый катет треугольника: " + leg1);
+        System.out.println("Второй катет треугольника: " + leg2);
+        System.out.println("Гипотенуза треугольника: " + hypotenuse);
+        double areaTriangle = 0;
+        areaTriangle = 0.5 * leg1 * leg2;
         System.out.println("Площадь треугольника: " + areaTriangle);
-        if (firstLeg == 3 && secondLeg == 4) {
+        if (leg1 == 3 && leg2 == 4) {
+            System.out.println(" " + "\\");
+            System.out.println(" " + " " + "\\");
             System.out.println("|" + " " + " " + "\\");
             System.out.println("|" + " " + " " +  " " + "\\");
             System.out.println("|" + "_" + "_" + "_" + "_"+ "\\");
-        } else if (firstLeg == 4 && secondLeg == 3) {
+        } else if (leg1 == 4 && leg2 == 3) {
             System.out.println("|" + "\\");
             System.out.println("|" + " " + "\\");
             System.out.println("|" + " " + " " + "\\");
@@ -198,9 +203,9 @@ public class IfElseStatementTheme {
         int denomination50 = 50;
         int denomination10 = 10;
         int denomination1 = 1;
-        int banknote50 = sum / denomination50;
-        int banknote10 = (sum - banknote50 * denomination50) / denomination10;
-        int banknote1 = sum - banknote50 * denomination50 - banknote10 * denomination10;
+        int banknote50 = sum / denomination50;        
+        int banknote10 = (sum % denomination50) / denomination10;       
+        int banknote1 = sum % denomination10;
         int sumBack = banknote50 * denomination50 + banknote10 * denomination10 + banknote1;
         System.out.println("Доступны номиналы банкнот: " + denomination50 + ", " + denomination10 + ", " + denomination1);
         System.out.println("Требуемое количество банкнот:");
