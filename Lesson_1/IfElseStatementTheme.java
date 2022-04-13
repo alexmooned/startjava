@@ -3,17 +3,16 @@ public class IfElseStatementTheme {
         //1. Перевод псевдокода на язык Java
         System.out.println("1. Перевод псевдокода на язык Java");
         int age = 1;
-        boolean male = true;
-        double height = 1.7d;
-
         if (age > 20) {
             System.out.println("Ваш возраст больше 20");
         } else {
             System.out.println("Ваш возраст до 20");
         }
+        boolean male = true;
         if (!male) {
             System.out.println("Ваш пол не мужской");
         }
+        double height = 1.7d;
         if (height < 1.8) {
             System.out.println("Ваш рост меньше 1.8");
         } else {
@@ -154,8 +153,8 @@ public class IfElseStatementTheme {
 
         //9. Определение существования треугольника
         System.out.println("\n9. Определение существования треугольника");
-        int a = 3;
-        int b = 4;
+        int a = 4;
+        int b = 3;
         int c = 5;                
         if (a + b > c && a + c > b && b + c > a) {
             System.out.println("Треугольник может существовать");
