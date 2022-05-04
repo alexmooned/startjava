@@ -67,7 +67,7 @@ public class CyclesTheme {
             count++;
          }         
          if (count < 5) {            
-            for (int k = 0; k <= count; k++) {               
+            for (int k = 1; k <= 5 - count; k++) {               
                 System.out.format("%3d", 0);
             }
         }
