@@ -1,6 +1,6 @@
 public class Person {
 	
-	char sex = "M";
+	char sex = 'M';
 	String name = "John";
 	float growth = 180f;
 	float weight = 50.5f;
@@ -24,5 +24,6 @@ public class Person {
 	
 	void learnJava() {
 		System.out.println("learning Java");
+		
 	}        
 }
