@@ -1,8 +1,7 @@
-public class Person {
-	
+public class Person {	
 	char sex = 'M';
 	String name = "John";
-	float growth = 180f;
+	float height = 180f;
 	float weight = 50.5f;
 	int age = 20;	
 	
