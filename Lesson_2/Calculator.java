@@ -3,7 +3,7 @@ public class Calculator {
     private int a;
     private int b;
     private char sign;
-    private int result = 1;
+    private int result;
 
     public int getA() {
         return a;
@@ -29,31 +29,27 @@ public class Calculator {
         this.sign = sign;
     }
 
-    public int getResult() {
+    public int calculate() {
         switch(sign) {
-        case '+' :
-            result = a + b;
-            break;
-        case '-' :
-            result = a - b;
-            break;
-        case '*' :
-            result = a * b;
-            break;
-        case '/' :
-            result = a / b;
-            break;
-        case '%' :
-            result = a % b;
-            break;
-        case '^' :
-            for (int i = 1; i <= b; i++) {
-                result *= a;        
-            }
-            break;
-        default:
-            System.out.println("Знак математической операции задан неверно.");
+            case '+' :
+                return a + b;
+            case '-' :
+                return a - b;
+            case '*' :
+                return a * b;
+            case '/' :
+                return a / b;
+            case '%' :
+                return a % b;
+            case '^' :
+                result = 1;
+                for (int i = 1; i <= b; i++) {
+                    result *= a;        
+                }
+                return result;
+            default:
+                System.out.println("Знак математической операции задан неверно.");
         }
-        return result;
+        return 0;
     }
 }

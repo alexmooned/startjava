@@ -1,8 +1,7 @@
 public class JaegerTest {
     
     public static void main(String[] args) {        
-        Jaeger firstJaeger = new Jaeger();
-        Jaeger secondJaeger = new Jaeger();
+        Jaeger firstJaeger = new Jaeger();        
         firstJaeger.setModelName("Striker Eureka");
         firstJaeger.setMark("Mark-5");
         firstJaeger.setOrigin("Australia");
@@ -11,6 +10,7 @@ public class JaegerTest {
         firstJaeger.setStrength(10);
         firstJaeger.setArmor(9);
 
+        Jaeger secondJaeger = new Jaeger();
         secondJaeger.setModelName("Coyote Tango");
         secondJaeger.setMark("Mark-1");
         secondJaeger.setOrigin("Japan");
