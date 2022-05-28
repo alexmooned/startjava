@@ -16,12 +16,10 @@ public class CalculatorTest {
             calc.setB(scanner.nextInt());
             scanner.nextLine();
             System.out.println(calc.getA() + " " + calc.getSign() + " " + calc.getB() + " = " + calc.calculate());            
-            while (true) {   
+            continued = "";
+            while (!continued.equals("no") && !continued.equals("yes")) {   
                 System.out.println("Хотите продолжить вычисления? [yes/no]: ");
                 continued = scanner.nextLine(); 
-                if (continued.equals("no") || continued.equals("yes")) {
-                    break;
-                }
             }
         }       
     }

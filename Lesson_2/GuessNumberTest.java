@@ -19,24 +19,22 @@ public class GuessNumberTest {
             while (true) {
                 System.out.print("Игрок " + firstPlayer.name + " введите число: ");
                 guessFirstPlayer.setUserNum(scanner.nextInt());
-                if (guessFirstPlayer.getResult() == 1) {
+                if (guessFirstPlayer.guess() == 1) {
                     System.out.println("Игрок " + firstPlayer.name + " победил!");
                     break;
                 }
                 System.out.print("Игрок " + secondPlayer.name + " введите число: ");
                 guessSecondPlayer.setUserNum(scanner.nextInt());
-                if (guessSecondPlayer.getResult() == 1) {
+                if (guessSecondPlayer.guess() == 1) {
                     System.out.println("Игрок " + secondPlayer.name + " победил!");
                     break;
                 }
             }
             scanner.nextLine();
-            while (true) {                     
+            continued = "";
+            while (!continued.equals("no") && !continued.equals("yes")) {                     
                     System.out.println("Хотите продолжить игру? [yes/no]: ");
                     continued = scanner.nextLine(); 
-                    if (continued.equals("no") || continued.equals("yes")) {
-                        break;
-                    }
                 }
         }
     }

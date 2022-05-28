@@ -11,7 +11,7 @@ public class GuessNumber {
         this.computerNum = computerNum;
     }
 
-    public int getResult() {        
+    public int guess() {        
         if (userNum > computerNum) {
             System.out.println("Данное число больше того, что загадал компьютер");
             return 0;
