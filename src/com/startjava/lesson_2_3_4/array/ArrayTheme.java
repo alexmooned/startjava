@@ -5,8 +5,8 @@ import java.util.Arrays;
 public class ArrayTheme {
 
     public static void main(String[] args) {
-        //Реверс значений массива
-        System.out.println("Реверс значений массива");
+        //Р РµРІРµСЂСЃ Р·РЅР°С‡РµРЅРёР№ РјР°СЃСЃРёРІР°
+        System.out.println("Р РµРІРµСЂСЃ Р·РЅР°С‡РµРЅРёР№ РјР°СЃСЃРёРІР°");
         int[] numbers = {1, 2, 3, 4, 5, 6, 7};
         int size = numbers.length;
 
@@ -24,8 +24,8 @@ public class ArrayTheme {
         ) {
             System.out.print(dig + " ");
         }
-        //Вывод произведения элементов массива
-        System.out.println("\n\nВывод произведения элементов массива");
+        //Р’С‹РІРѕРґ РїСЂРѕРёР·РІРµРґРµРЅРёСЏ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°
+        System.out.println("\n\nР’С‹РІРѕРґ РїСЂРѕРёР·РІРµРґРµРЅРёСЏ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°");
         int[] array2 = new int[10];
         for (int i = 0; i < array2.length; i++) {
             array2[i] = (i + 1) * 2;
@@ -39,18 +39,18 @@ public class ArrayTheme {
             }
         }
         System.out.print(" = " + x);
-        System.out.println("\nЗначение элемента массива с индексом 0 = " + array2[0]);
-        System.out.println("Значение элемента массива с индексом 9 = " + array2[9]);
-        //Удаление элементов массива
-        System.out.println("\nУдаление элементов массива");
+        System.out.println("\nР—РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР° СЃ РёРЅРґРµРєСЃРѕРј 0 = " + array2[0]);
+        System.out.println("Р—РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР° СЃ РёРЅРґРµРєСЃРѕРј 9 = " + array2[9]);
+        //РЈРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°
+        System.out.println("\nРЈРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°");
         double[] array3 = new double[15];
-        System.out.println("Исходный массив:");
+        System.out.println("РСЃС…РѕРґРЅС‹Р№ РјР°СЃСЃРёРІ:");
         for (int i = 0; i < array3.length; i++) {
             array3[i] = Math.random();
             System.out.println(array3[i]);
         }
         double midNum = array3[array3.length / 2];
-        System.out.println("Измененный массив:");
+        System.out.println("РР·РјРµРЅРµРЅРЅС‹Р№ РјР°СЃСЃРёРІ:");
         int cnt = 0;
         for (int i = 0; i < array3.length; i++) {
             if (array3[i] > midNum) {
@@ -59,9 +59,9 @@ public class ArrayTheme {
             }
             System.out.println(array3[i]);
         }
-        System.out.println("Количество обнуленных ячеек: " + cnt);
-        //Вывод элементов массива лесенкой в обратном порядке
-        System.out.println("\nВывод элементов массива лесенкой в обратном порядке:");
+        System.out.println("РљРѕР»РёС‡РµСЃС‚РІРѕ РѕР±РЅСѓР»РµРЅРЅС‹С… СЏС‡РµРµРє: " + cnt);
+        //Р’С‹РІРѕРґ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР° Р»РµСЃРµРЅРєРѕР№ РІ РѕР±СЂР°С‚РЅРѕРј РїРѕСЂСЏРґРєРµ
+        System.out.println("\nР’С‹РІРѕРґ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР° Р»РµСЃРµРЅРєРѕР№ РІ РѕР±СЂР°С‚РЅРѕРј РїРѕСЂСЏРґРєРµ:");
         char[] array4 = new char[26];
         cnt = 0;
         for (char i = 'A'; i <= 'Z'; i++) {
@@ -73,8 +73,8 @@ public class ArrayTheme {
             symb += array4[i];
             System.out.println(symb);
         }
-        //Генерация уникальных чисел
-        System.out.println("\nГенерация уникальных чисел:");
+        //Р“РµРЅРµСЂР°С†РёСЏ СѓРЅРёРєР°Р»СЊРЅС‹С… С‡РёСЃРµР»
+        System.out.println("\nР“РµРЅРµСЂР°С†РёСЏ СѓРЅРёРєР°Р»СЊРЅС‹С… С‡РёСЃРµР»:");
         int[] array5 = new int[30];
         int numNew = 1;
         for (int i = 0; i < array5.length; i++) {
