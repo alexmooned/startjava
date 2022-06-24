@@ -88,15 +88,16 @@ public class ArrayTheme {
             } while (cnt > 0);
             array5[i] = numNew;
         }
-        for (int i = 0; i < array5.length - 1; i++) {
-            for (int j = i + 1; j < array5.length; j++) {
-                if (array5[i] > array5[j]) {
-                    int temp = array5[i];
-                    array5[i] = array5[j];
-                    array5[j] = temp;
-                }
-            }
-        }
+        Arrays.sort(array5);
+//        for (int i = 0; i < array5.length - 1; i++) {
+//            for (int j = i + 1; j < array5.length; j++) {
+//                if (array5[i] > array5[j]) {
+//                    int temp = array5[i];
+//                    array5[i] = array5[j];
+//                    array5[j] = temp;
+//                }
+//            }
+//        }
         cnt = 0;
         for (int i = 0; i < array5.length; i++) {
             if (cnt == 10) {
