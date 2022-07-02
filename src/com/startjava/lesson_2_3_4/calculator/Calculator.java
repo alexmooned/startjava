@@ -8,54 +8,27 @@ public class Calculator {
     private static int b;
     private static char sign;
 
-    public static int getA() {
-        return a;
-    }
-
-    public static void setA(int a) {
-        Calculator.a = a;
-    }
-
-    public static int getB() {
-        return b;
-    }
-
-    public static void setB(int b) {
-        Calculator.b = b;
-    }
-
-    public static char getSign() {
-        return sign;
-    }
-
-    public static void setSign(char sign) {
-        Calculator.sign = sign;
+    public static void pars(String expr) {
+        String[] mathExpr = expr.split(" ");
+        a = Integer.parseInt(mathExpr[0]);
+        sign = mathExpr[1].charAt(0);
+        b = Integer.parseInt(mathExpr[2]);
     }
 
     public static int calculate() {
         return switch (sign) {
-            case '+':
-                yield addExact(a, b);
-            case '-':
-                yield subtractExact(a, b);
-            case '*':
-                yield multiplyExact(a, b);
-            case '/':
-                yield a / b;
-            case '%':
-                yield a % b;
-            case '^':
-                int result = 1;
-                for (int i = 1; i <= b; i++) {
-                    result *= a;
-                }
-                yield result;
-            default:
+            case '+' -> addExact(a, b);
+            case '-' -> subtractExact(a, b);
+            case '*' -> multiplyExact(a, b);
+            case '/' -> a / b;
+            case '%' -> a % b;
+            case '^' -> (int) pow(a, b);
+            default -> {
                 System.out.println("Знак математической операции задан неверно.");
                 yield 0;
+            }
         };
     }
 
 
 }
-

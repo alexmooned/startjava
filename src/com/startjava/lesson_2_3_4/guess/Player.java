@@ -2,12 +2,13 @@ package com.startjava.lesson_2_3_4.guess;
 
 public class Player {
 
-    String name;
-    int[] playerNum = new int[10];
-    
+    private String name;
+    int[] enteredNums = new int[10];
+
     public Player(String name) {
-            this.name = name;
+        this.name = name;
     }
+
     public String getName() {
         return name;
     }
