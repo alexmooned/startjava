@@ -10,15 +10,8 @@ public class CalculatorTest {
         while (!continued.equals("no")) {
             if ("yes".equals(continued)) {
                 System.out.print("Введите математическое выражение (н-р: 1 + 2): ");
-                String expr = scanner.nextLine();
-                try {
-                    Calculator.pars(expr);
-                } catch (NumberFormatException e) {
-                    System.out.println(e.getMessage());
-                    System.out.println("Используйте для вычислений только целые положительные числа");
-                    continue;
-                }
-                System.out.println(expr + " = " + Calculator.calculate());
+                String expression = scanner.nextLine();
+                System.out.println(expression + " = " + Calculator.calculate(expression));
             }
             System.out.println("Хотите продолжить вычисления? [yes/no]: ");
             continued = scanner.nextLine();

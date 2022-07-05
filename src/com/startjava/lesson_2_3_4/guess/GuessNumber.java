@@ -5,67 +5,55 @@ import java.util.Scanner;
 
 public class GuessNumber {
 
-    private Player pl1;
-    private Player pl2;
+    private int targetNumber;
+    private Player[] players = new Player[2];
 
-    public GuessNumber(Player pl1, Player pl2) {
-        this.pl1 = pl1;
-        this.pl2 = pl2;
+    public GuessNumber(Player[] players) {
+        this.players = players;
     }
 
     public void start() {
-        int computerNum = (int) (Math.random() * 100 + 1);
-        System.out.println(computerNum);
+        targetNumber = (int) (Math.random() * 100 + 1);
+        System.out.println(targetNumber);
+        for (Player playerClear : players) {
+            playerClear.setCntPl(0);
+            Arrays.fill(playerClear.getEnteredNums(), 0);
+        }
         Scanner scanner = new Scanner(System.in);
         System.out.println("У каждого игрока по 10 попыток!");
-        int cntPl1 = 0;
-        int cntPl2 = 0;
-        Arrays.fill(pl1.enteredNums, 0);
-        Arrays.fill(pl2.enteredNums, 0);
         for (int i = 0; i < 10; i++) {
-            System.out.print("Игрок " + pl1.getName() + " введите число: ");
-            int userNum = scanner.nextInt();
-            pl1.enteredNums[i] = userNum;
-            cntPl1++;
-            if (compareNums(userNum, computerNum)) {
-                System.out.println("Игрок " + pl1.getName() + " угадал число " + userNum + " с " + cntPl1 + " попытки!");
-                break;
+            for (Player plr : players) {
+                System.out.print("Игрок " + plr.getName() + " введите число: ");
+                int playerNum = scanner.nextInt();
+                plr.setEnteredNums(i, playerNum);
+                plr.setCntPl(plr.getCntPl() + 1);
+                if (compareNums(plr, playerNum)) {
+                    for (Player playerAttemps : players) {
+                        printNums(playerAttemps);
+                    }
+                    return;
+                }
+                if (i == 9) System.out.println("У " + plr.getName() + " закончились попытки.");
             }
-            if (i == 9) System.out.println("У " + pl1.getName() + " закончились попытки.");
-
-            System.out.print("Игрок " + pl2.getName() + " введите число: ");
-            userNum = scanner.nextInt();
-            pl2.enteredNums[i] = userNum;
-            cntPl2++;
-            if (compareNums(userNum, computerNum)) {
-                System.out.println("Игрок " + pl2.getName() + " угадал число " + userNum + " с " + cntPl2 + " попытки!");
-                break;
-            }
-            if (i == 9) System.out.println("У " + pl2.getName() + " закончились попытки.");
         }
-        int[] arraysCopyPl1 = Arrays.copyOf(pl1.enteredNums, cntPl1);
-        System.out.print("Игрок " + pl1.getName() + " ввел числа: ");
-        printNums(arraysCopyPl1);
-
-        int[] arraysCopyPl2 = Arrays.copyOf(pl2.enteredNums, cntPl2);
-        System.out.print("Игрок " + pl2.getName() + " ввел числа: ");
-        printNums(arraysCopyPl2);
     }
 
-    private boolean compareNums(int userNumber, int computerNumber) {
-        if (userNumber == computerNumber) return true;
-        else {
-            if (userNumber > computerNumber) {
-                System.out.println("Данное число больше того, что загадал компьютер");
-            } else if (userNumber < computerNumber) {
-                System.out.println("Данное число меньше того, что загадал компьютер");
-            }
+    private boolean compareNums(Player player, int playerNumber) {
+        if (playerNumber == targetNumber) {
+            System.out.println("Игрок " + player.getName() + " угадал число " + targetNumber + " с " + player.getCntPl() + " попытки!");
+            return true;
+        }
+        {
+            String msg = playerNumber > targetNumber ? "Данное число больше того, что загадал компьютер" : "Данное число меньше того, что загадал компьютер";
+            System.out.println(msg);
             return false;
         }
     }
 
-    private void printNums(int[] array) {
-        for (int num : array) {
+    private void printNums(Player player) {
+        int[] arraysCopyPlayer = Arrays.copyOf(player.getEnteredNums(), player.getCntPl());
+        System.out.print("Игрок " + player.getName() + " ввел числа: ");
+        for (int num : arraysCopyPlayer) {
             System.out.print(num + " ");
         }
         System.out.println("");

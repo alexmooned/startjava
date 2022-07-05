@@ -8,14 +8,20 @@ public class Calculator {
     private static int b;
     private static char sign;
 
-    public static void pars(String expr) {
-        String[] mathExpr = expr.split(" ");
+    private static void pars(String expression) {
+        String[] mathExpr = expression.split(" ");
         a = Integer.parseInt(mathExpr[0]);
         sign = mathExpr[1].charAt(0);
         b = Integer.parseInt(mathExpr[2]);
     }
 
-    public static int calculate() {
+    public static int calculate(String expression) {
+        try {
+            Calculator.pars(expression);
+        } catch (NumberFormatException e) {
+            System.out.println(e.getMessage());
+            System.out.println("Используйте для вычислений только целые положительные числа");
+        }
         return switch (sign) {
             case '+' -> addExact(a, b);
             case '-' -> subtractExact(a, b);
@@ -29,6 +35,4 @@ public class Calculator {
             }
         };
     }
-
-
 }
