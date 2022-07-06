@@ -1,7 +1,5 @@
 package com.startjava.lesson_2_3_4.calculator;
 
-import static java.lang.Math.*;
-
 public class Calculator {
 
     private static int a;
@@ -23,12 +21,12 @@ public class Calculator {
             System.out.println("Используйте для вычислений только целые положительные числа");
         }
         return switch (sign) {
-            case '+' -> addExact(a, b);
-            case '-' -> subtractExact(a, b);
-            case '*' -> multiplyExact(a, b);
+            case '+' -> Math.addExact(a, b);
+            case '-' -> Math.subtractExact(a, b);
+            case '*' -> Math.multiplyExact(a, b);
             case '/' -> a / b;
             case '%' -> a % b;
-            case '^' -> (int) pow(a, b);
+            case '^' -> (int) Math.pow(a, b);
             default -> {
                 System.out.println("Знак математической операции задан неверно.");
                 yield 0;
